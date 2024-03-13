@@ -68,11 +68,16 @@ header {
 
 header::before {
   /* https://edavis.github.io/2018/02/04/create-an-angled-background-in-css/ */
-  background-image: linear-gradient(165deg, #7cb8f1 65%, #ffffff calc(65% + 1px));
+  /* background-image: linear-gradient(165deg, #7cb8f1 65%, #ffffff calc(65% + 1px)); */
+
+  /* background: linear-gradient(166deg, transparent 70%, #fff calc(70% + 1px)),
+    linear-gradient(90deg, #031085 10%, #ed8080 calc(80% + 1px)); */
+  background: linear-gradient(164deg, transparent 59%, #fff calc(59% + 1px)),
+    linear-gradient(161deg, #7cb8f1 10%, #ed8080 calc(80% + 1px));
   position: absolute;
   content: "";
   width: 100%;
-  height: 100%;
+  height: 120vh;
   z-index: -1;
 }
 
@@ -95,7 +100,7 @@ header::before {
 }
 
 .about {
-  background: white;
+  background: linear-gradient(155deg, #9bceff 22%, #ffd2d2 calc(90% + 1px));
   color: black;
   box-shadow: 0px 0px 5px #959595;
   padding: 60px;
@@ -133,16 +138,26 @@ h3 {
   width: 32px;
 }
 
+main {
+  background-image: linear-gradient(180deg, #ed8080, #fdfdfd);
+  --mask: conic-gradient(from 130deg at top, #0000, #000 1deg 99deg, #0000 100deg) 50%/71.51px 100%;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
 main h2.container {
   max-width: 1500px;
-  margin-bottom: 15px;
+  padding-block-start: 50px;
+  padding-block-end: 15px;
 }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: min-content;
   gap: 50px 40px;
   max-width: 1500px;
+  min-height: 95vh;
 }
 
 .projects .icons img {
@@ -177,10 +192,38 @@ main h2.container {
   flex-direction: column;
   gap: 30px;
   padding: 10px 15px;
+  background-color: white;
 }
 
 .description {
   color: #1f1f1f;
+}
+
+footer {
+  /* margin-top: 150px; */
+  padding: 60px 0;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 1px rgba(1, 0, 0, 1);
+  /* https://css-generators.com/wavy-shapes/ */
+  background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+  --mask: radial-gradient(35.05px at 50% 49.45px, #000 99%, #0000 101%) calc(50% - 46px) 0/92px 100%,
+    radial-gradient(35.05px at 50% -26.45px, #0000 99%, #000 101%) 50% 23px/92px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  max-width: 1500px;
+}
+
+.contact .info {
+  display: flex;
+}
+
+.contact .info img {
+  width: 25px;
 }
 
 @media screen and (max-width: 1200px) {
