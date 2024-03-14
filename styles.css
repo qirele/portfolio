@@ -36,7 +36,7 @@
 .header-inner {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  grid-template-rows: 100vh;
+  grid-template-rows: 100%;
 }
 
 img {
@@ -63,7 +63,7 @@ figcaption {
 
 header {
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 header::before {
@@ -72,28 +72,27 @@ header::before {
 
   /* background: linear-gradient(166deg, transparent 70%, #fff calc(70% + 1px)),
     linear-gradient(90deg, #031085 10%, #ed8080 calc(80% + 1px)); */
-  background: linear-gradient(164deg, transparent 59%, #fff calc(59% + 1px)),
+  background: linear-gradient(170deg, transparent 59%, #fff calc(59% + 1px)),
     linear-gradient(161deg, #7cb8f1 10%, #ed8080 calc(80% + 1px));
   position: absolute;
   content: "";
   width: 100%;
-  height: 120vh;
+  height: 100%;
   z-index: -1;
 }
 
 .figure-wrapper {
-  height: 100vh;
   padding: 60px 0 60px 0;
 }
 
 .figure-wrapper .img-wrapper {
-  height: 100%;
   position: relative;
+  height: 100%;
 }
 
 .figure-wrapper .img-wrapper img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: left;
   box-shadow: 0px 9px 20px -10px rgba(66, 68, 90, 1);
@@ -114,9 +113,11 @@ header::before {
 h1 {
   font-size: 4rem;
 }
+
 h2 {
   font-size: 3.3rem;
 }
+
 h3 {
   font-size: 1.5rem;
 }
@@ -157,7 +158,7 @@ main h2.container {
   grid-auto-rows: min-content;
   gap: 50px 40px;
   max-width: 1500px;
-  min-height: 95vh;
+  padding-bottom: 150px;
 }
 
 .projects .icons img {
@@ -226,7 +227,10 @@ footer {
   width: 25px;
 }
 
-@media screen and (max-width: 1200px) {
-  .body-wrapper {
+@media screen and (min-height: 750px) {
+
+  .header-inner {
+    height: max(100vh, 900px);
   }
+
 }
