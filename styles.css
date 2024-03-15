@@ -1,3 +1,7 @@
+:root {
+  --body-bg: rgb(223, 223, 223);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +36,10 @@
   font-style: normal;
 }
 */
+
+body {
+  background-color: var(--body-bg);
+}
 
 .header-inner {
   display: grid;
@@ -72,7 +80,7 @@ header::before {
 
   /* background: linear-gradient(166deg, transparent 70%, #fff calc(70% + 1px)),
     linear-gradient(90deg, #031085 10%, #ed8080 calc(80% + 1px)); */
-  background: linear-gradient(170deg, transparent 59%, #fff calc(59% + 1px)),
+  background: linear-gradient(170deg, transparent 59%, var(--body-bg) calc(59% + 1px)),
     linear-gradient(161deg, #7cb8f1 10%, #ed8080 calc(80% + 1px));
   position: absolute;
   content: "";
@@ -102,12 +110,18 @@ header::before {
   background: linear-gradient(155deg, #9bceff 22%, #ffd2d2 calc(90% + 1px));
   color: black;
   box-shadow: 0px 0px 5px #959595;
-  padding: 60px;
   margin: 120px 0;
+  padding-block: 60px;
+  padding-inline: 25px 60px;
 
   display: flex;
   flex-direction: column;
   gap: 45px;
+
+  /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 h1 {
@@ -140,10 +154,7 @@ h3 {
 }
 
 main {
-  background-image: linear-gradient(180deg, #ed8080, #fdfdfd);
-  --mask: conic-gradient(from 130deg at top, #0000, #000 1deg 99deg, #0000 100deg) 50%/71.51px 100%;
-  -webkit-mask: var(--mask);
-  mask: var(--mask);
+  background-image: linear-gradient(180deg, #ed8080, var(--body-bg));
 }
 
 main h2.container {
@@ -219,18 +230,42 @@ footer {
   max-width: 1500px;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact p {
+  padding-right: 3rem;
+}
+
 .contact .info {
   display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.contact .info:nth-of-type(1) {
+  margin-bottom: 6px;
 }
 
 .contact .info img {
   width: 25px;
+  filter: brightness(0) invert(1);
+}
+
+.contact .icons {
+  display: flex;
+  gap: 10px;
+}
+
+.contact .icons img {
+  width: 48px;
 }
 
 @media screen and (min-height: 750px) {
-
   .header-inner {
     height: max(100vh, 900px);
   }
-
 }
