@@ -269,3 +269,31 @@ footer {
     height: max(100vh, 900px);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .header-inner {
+    height: auto;
+    display: block;
+    padding-block: 60px;
+  }
+
+  .figure-wrapper {
+    height: 400px;
+    padding: 0;
+    float: left;
+    margin-right: 60px;
+    margin-bottom: 20px;
+  }
+
+  .about {
+    display: block;
+    margin: 60px;
+    padding: 60px
+  }
+
+
+  .figure-wrapper figcaption {
+    top: auto;
+    bottom: 0;
+  }
+}
