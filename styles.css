@@ -80,7 +80,11 @@ header::before {
 
   /* background: linear-gradient(166deg, transparent 70%, #fff calc(70% + 1px)),
     linear-gradient(90deg, #031085 10%, #ed8080 calc(80% + 1px)); */
-  background: linear-gradient(170deg, transparent 59%, var(--body-bg) calc(59% + 1px)),
+  background: linear-gradient(
+      170deg,
+      transparent 59%,
+      var(--body-bg) calc(59% + 1px)
+    ),
     linear-gradient(161deg, #7cb8f1 10%, #ed8080 calc(80% + 1px));
   position: absolute;
   content: "";
@@ -111,8 +115,8 @@ header::before {
   color: black;
   box-shadow: 0px 0px 5px #959595;
   margin: 120px 0;
-  padding-block: 60px;
-  padding-inline: 25px 60px;
+  padding: 60px;
+  text-align: justify;
 
   display: flex;
   flex-direction: column;
@@ -218,8 +222,10 @@ footer {
   text-shadow: 1px 1px 1px rgba(1, 0, 0, 1);
   /* https://css-generators.com/wavy-shapes/ */
   background-image: linear-gradient(45deg, #654ea3, #eaafc8);
-  --mask: radial-gradient(35.05px at 50% 49.45px, #000 99%, #0000 101%) calc(50% - 46px) 0/92px 100%,
-    radial-gradient(35.05px at 50% -26.45px, #0000 99%, #000 101%) 50% 23px/92px 100% repeat-x;
+  --mask: radial-gradient(35.05px at 50% 49.45px, #000 99%, #0000 101%)
+      calc(50% - 46px) 0/92px 100%,
+    radial-gradient(35.05px at 50% -26.45px, #0000 99%, #000 101%) 50% 23px/92px
+      100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
@@ -271,6 +277,19 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
+  header {
+    padding-bottom: 0;
+  }
+
+  .container {
+    padding-inline: 0;
+    width: 85vw;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
   .header-inner {
     height: auto;
     display: block;
@@ -278,22 +297,34 @@ footer {
   }
 
   .figure-wrapper {
-    height: 400px;
-    padding: 0;
+    width: 45vw;
     float: left;
-    margin-right: 60px;
-    margin-bottom: 20px;
+    padding: 0;
+    transform: translate(-4vw, -0.5rem);
+    shape-outside: inset(10px 18px 10px 10px);
+  }
+
+  .figure-wrapper figcaption {
+    width: 100vw;
+    transform: translateX(39vw);
+    text-align: left;
   }
 
   .about {
     display: block;
-    margin: 60px;
-    padding: 60px
+    margin: 7rem 0 0 0;
   }
 
+  .about h1 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
 
-  .figure-wrapper figcaption {
-    top: auto;
-    bottom: 0;
+  .about .icons {
+    display: none;
+  }
+
+  .footer-inner {
+    grid-template-columns: 4fr 3fr;
   }
 }
