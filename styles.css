@@ -198,6 +198,7 @@ main h2.container {
 
 .project {
   box-shadow: 0px 10px 17px -1px #cdcdcd;
+  background: white;
 }
 
 .project .img-wrapper {
@@ -220,6 +221,7 @@ main h2.container {
 
 .description {
   color: #4f4f4f;
+  hyphens: auto;
 }
 
 footer {
@@ -299,15 +301,15 @@ footer .info {
   width: 48px;
 }
 
-.icons img {
-  transition: all .7s;
+.icons a img {
+  transition: all 0.8s;
 }
 
-.icons a:hover,
-.icons a:focus {
+.icons a:hover img,
+.icons a:focus img {
   background: lightblue;
   transform: rotate(1turn) scale(1.3);
-  transition: all .4s;
+  transition: all 0.5s;
   border-radius: 5px;
 }
 
